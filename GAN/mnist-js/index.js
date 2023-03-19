@@ -9,6 +9,7 @@ generate.addEventListener('click', async () => {
     canvas.height = 28;
     canvas.style.width = '100%';
     canvas.style.maxWidth = '200px';
+    ctx.imageSmoothingEnabled = false;
     const imageData = ctx.createImageData(28, 28);
     const data = await img.data();
     for (let i = 0; i < data.length; i++) {
