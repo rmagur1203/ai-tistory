@@ -1,5 +1,5 @@
 generate.addEventListener('click', async () => {
-    document.getElementsByTagName('canvas').forEach(canvas => canvas.remove());
+    [...document.getElementsByTagName('canvas')].forEach(canvas => canvas.remove());
     const model = await tf.loadLayersModel('./generator/model.json');
     const noise = tf.randomNormal([1, 256]);
     const img = model.predict(noise);
